@@ -1,0 +1,52 @@
+.locationinput {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    border-radius: 5px;
+}
+
+
+
+.fivedayforecast {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+.container {
+    width: 100%;
+    border: azure solid;
+    text-align: center;
+    margin: 5px 10px;
+    box-shadow: 2px 2px #05445E;
+    border-radius: 10px;
+    padding: 10px 0;
+}
+
+.dailyweather {
+    background-color: #3e8e41;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    justify-content: space-evenly;
+  }
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 16px 20px;
+    display: block;
+  }
+
+  .dropdown-content a:hover {background-color: #ddd;}
+
+  .dropdown:hover .dropdown-content {display: block;}
+  
+  .dropdown:hover .dropbtn {background-color: darkblue;}
