@@ -11,7 +11,9 @@ $(document).ready(function(){
         })
 
         async function CallAPItoday(){
-        var currentlocation = JSON.parse(localStorage.getItem('currentlocation'));
+                 if (localStorage.hasOwnProperty('currentlocation')) {
+        var currentlocation = JSON.parse(localStorage.getItem('currentlocation'))
+        } else {var currentlocation = "sydney"};
         const APIKey = "c9a9ed03a355403f4cb9a36e931c0b4a";
         var weatherURL = "https://api.openweathermap.org/data/2.5/weather?q=" + currentlocation + "&appid=" + APIKey;
         var response = await fetch(weatherURL);
