@@ -16,7 +16,6 @@ $(document).ready(function(){
         var weatherURL = "https://api.openweathermap.org/data/2.5/weather?q=" + currentlocation + "&appid=" + APIKey;
         var response = await fetch(weatherURL);
         var data = await response.json();
-        console.log(data)
         var cityname = (data.name);
         var todayshumidity = (data.main.humidity);
         var todaystemperatureKelvin = (data.main.temp);
@@ -30,11 +29,8 @@ $(document).ready(function(){
         var UVindexcall = "https://api.openweathermap.org/data/2.5/onecall?lat=" + latitude + "&lon=" + longitude + "&appid=" + APIKey + "&cnt=1";
         var response2 = await fetch(UVindexcall);
         var data2 = await response2.json();
-        console.log(data2);
         var UVindex = (data2.daily[0].uvi);
-        console.log(UVindex);
         var UNIX_timestamp = (data2.current.dt)
-        console.log(UNIX_timestamp);
         localStorage.setItem('UNIX_timestamp', UNIX_timestamp)
         timeConverter();
         var todaysweather = $('.todaysweather');
@@ -83,22 +79,16 @@ $(document).ready(function(){
     }
 
     async function CallAPI5day(){
-        console.log("yyyyy")
         var latitude = localStorage.getItem('latitude');
         var longitude = localStorage.getItem('longitude');
-        console.log(latitude);
-        console.log(longitude);
         var APIKey = "c9a9ed03a355403f4cb9a36e931c0b4a";
         var fivedayweatherURL = "https://api.openweathermap.org/data/2.5/onecall?lat=" + latitude + "&lon=" + longitude + "&appid=" + APIKey + "&cnt=5";
-        console.log(fivedayweatherURL);
         var response = await fetch(fivedayweatherURL);
         var data = await response.json();
-        console.log(data);
         $('li').remove();
         $('.dailyweather img').remove();
         var day1 = $('.day1')
             var UNIX_timestamp = (data.daily[1].dt)
-            console.log(UNIX_timestamp)
             localStorage.setItem('UNIX_timestamp', UNIX_timestamp)
             timeConverter();
             var time = localStorage.getItem('time')
@@ -123,7 +113,6 @@ $(document).ready(function(){
             .text("humidity" + "=" + humidity);
         var day2 = $('.day2')
             var UNIX_timestamp = (data.daily[2].dt)
-            console.log(UNIX_timestamp)
             localStorage.setItem('UNIX_timestamp', UNIX_timestamp)
             timeConverter();
             var time = localStorage.getItem('time')
@@ -148,7 +137,6 @@ $(document).ready(function(){
             .text("humidity" + "=" + humidity);
         var day3 = $('.day3')
             var UNIX_timestamp = (data.daily[3].dt)
-            console.log(UNIX_timestamp)
             localStorage.setItem('UNIX_timestamp', UNIX_timestamp)
             timeConverter();
             var time = localStorage.getItem('time')
@@ -173,7 +161,6 @@ $(document).ready(function(){
             .text("humidity" + "=" + humidity);
         var day4 = $('.day4')
             var UNIX_timestamp = (data.daily[4].dt)
-            console.log(UNIX_timestamp)
             localStorage.setItem('UNIX_timestamp', UNIX_timestamp)
             timeConverter();
             var time = localStorage.getItem('time')
@@ -198,7 +185,6 @@ $(document).ready(function(){
             .text("humidity" + "=" + humidity);
         var day5 = $('.day5')
             var UNIX_timestamp = (data.daily[5].dt)
-            console.log(UNIX_timestamp)
             localStorage.setItem('UNIX_timestamp', UNIX_timestamp)
             timeConverter();
             var time = localStorage.getItem('time')
