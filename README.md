@@ -1,6 +1,8 @@
 # Homework_week_6_weather_dashboard
 
+image of deployed site
 
+weather dashboard.png
 
 Goal 
 
