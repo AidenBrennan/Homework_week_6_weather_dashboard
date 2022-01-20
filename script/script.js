@@ -1,7 +1,7 @@
 $(document).ready(function(){
     if (localStorage.hasOwnProperty('searchedlocation')) {
         var searchedlocation = JSON.parse(localStorage.getItem('searchedlocation'))}
-        else { var searchedlocation = []};
+        else { var searchedlocation = ["Sydney", "Berlin", "Prague", "Florence", "Tokyo"]};
         var displaylocation = $('.dropdown-content')
         CallAPItoday();
         $.each(searchedlocation, function(i) {
